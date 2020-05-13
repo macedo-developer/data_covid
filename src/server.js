@@ -6,4 +6,4 @@ const jobs = require("./jobs/cron");
 // cron.schedule("*/5? * * * *", () => jobs());
 cron.schedule("0 */10 * * * *", () => jobs());
 
-app.listen(2323);
+app.listen(process.env.PORT || 2323);
