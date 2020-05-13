@@ -1,7 +1,7 @@
 const api = require("../service/api");
 
 module.exports = function start() {
-  console.log("Running jobs every 10 minutes");
+  console.log("Running jobs every 60 minutes");
   api
     .get("summary")
     .then((response) => {
