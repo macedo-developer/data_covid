@@ -6,7 +6,7 @@ module.exports = function start() {
     .get("summary")
     .then((response) => {
       const numbers = response.data.Global;
-      api.post("http://localhost:2323/corona", numbers);
+      api.post("https://covid19-macedorenata.herokuapp.com/corona", numbers);
     })
     .catch((error) => {
       console.error({ error });
