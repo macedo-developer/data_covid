@@ -2,6 +2,7 @@ exports.up = function (knex) {
   return knex.schema.createTable("data_corona", (table) => {
     table.increments("id");
     table.date("date").notNullable();
+    table.datetime("update_at", { precision: 6 }).notNullable();
     table.integer("newConfirmed").notNullable();
     table.integer("newDeaths").notNullable();
     table.integer("newRecovered").notNullable();

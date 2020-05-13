@@ -3,11 +3,22 @@
   "version": "1.0.0",
   "description": "Pegar informações de api dos numeros do covid",
   "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/server.js",
+    "start": "node ./src/server.js"
+  },
   "author": "Renata Macedo",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "dateformat": "^3.0.3",
     "express": "^4.17.1",
     "knex": "^0.21.1",
+    "node-cron": "^2.0.3",
     "sqlite3": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   }
 }
