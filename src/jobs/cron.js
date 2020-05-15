@@ -16,7 +16,6 @@ module.exports = function start() {
         newRecovered: "",
       };
 
-      console.log(data);
       api.post("https://covid19-macedorenata.herokuapp.com/corona", data);
     })
     .catch((error) => {
