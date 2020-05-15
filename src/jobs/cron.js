@@ -1,12 +1,23 @@
 const api = require("../service/api");
 
 module.exports = function start() {
-  console.log("Running jobs every 59 minutes");
+  console.log("Running jobs every 1 hours");
   api
-    .get("summary")
+    .get("countries/brazil")
     .then((response) => {
-      const numbers = response.data.Global;
-      api.post("https://covid19-macedorenata.herokuapp.com/corona", numbers);
+      const numbers = response.data;
+
+      const data = {
+        newConfirmed: numbers.todayCases,
+        newDeaths: numbers.todayDeaths,
+        totalRecovered: numbers.recovered,
+        totalConfirmed: numbers.cases,
+        totalDeaths: numbers.deaths,
+        newRecovered: "",
+      };
+
+      console.log(data);
+      api.post("https://covid19-macedorenata.herokuapp.com/corona", data);
     })
     .catch((error) => {
       console.error({ error });

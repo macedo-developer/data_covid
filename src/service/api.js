@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 const api = axios.create({
-  baseURL: "https://api.covid19api.com/",
+  baseURL: "http://coronavirus-19-api.herokuapp.com/",
 });
 
 module.exports = api;
